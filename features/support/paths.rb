@@ -17,6 +17,14 @@ module NavigationHelpers
       '/'
     when /^the new article page$/
       '/admin/content/new'
+    when /^the Similar Movies page for "(.*)"$/
+      then similar_movies_path(Movie.find_by_title($1))
+
+    when /^the edit page of "hello world"$/
+      '/admin/content/edit/1'
+    when /^the detail page of "changing the title"$/
+      '/2012/06/09/hello-world'
+
 
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
